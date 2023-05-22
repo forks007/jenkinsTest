@@ -127,11 +127,9 @@ class NewslettersPage extends BaseForm {
     return await this.getPreviewPlanForm(index).state().isDisplayed();
   }
   async getUnsubscribeLink() {
-    await this.previewPlanForm.switchFrame();
     return await this.linkToUnsubscribe.getAttributeFromElements("href");
   }
   async getAllNewslettersLink() {
-    await this.previewPlanForm.switchFrame();
     return await this.linkToAllNewsletter.getAttributeFromElements("href");
   }
   async gotoLink(link, name) {

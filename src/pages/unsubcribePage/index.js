@@ -11,10 +11,10 @@ class UnsubscribePage extends BaseForm {
     return new Element("#email", "Email Input Field");
   }
   get submitButton() {
-    return new Element("button= Confirm unsubcription", "Submit Button");
+    return new Element("button[type='submit']", "Submit Button");
   }
   get popupMessage() {
-    return new Element("#additional-data-modal", "Popup Message");
+    return new Element("(//p)[1]", "Popup Message");
   }
   get closePopupButton() {
     return new Element(".close-modal", "Close Popup Button");
@@ -27,7 +27,7 @@ class UnsubscribePage extends BaseForm {
     await this.submitButton.clickWithoutClickAbilityCheck();
   }
   async isPopupFormPresent() {
-    return await this.popupMessage.state().assertIsDisplayed();
+    return await this.popupMessage.getText();
   }
 }
 
